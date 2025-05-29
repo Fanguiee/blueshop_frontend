@@ -4,10 +4,12 @@ import Home from "./components/Home";
 
 import ProductsPage from "./components/ProductsPage";
 import Cart from "./components/Cart";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <BrowserRouter>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
