@@ -7,7 +7,7 @@ export default function ProductsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/products") // replace with your real API endpoint
+    fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -17,8 +17,7 @@ export default function ProductsPage() {
         console.error("Failed to fetch products:", error);
         setLoading(false);
       });
-  }, []); // empty dependency array = run only once on mount
-
+  }, []);
   if (loading) return <Loading />;
   return (
     <div>
