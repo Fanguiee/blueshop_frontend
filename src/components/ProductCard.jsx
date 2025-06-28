@@ -1,6 +1,14 @@
 import React from "react";
 
 export default function ProductCard({ product }) {
+  const addProductToCart = () => {
+    fetch(
+      `${import.meta.env.VITE_API_URL}/add/product/?productId=${
+        product.id
+      }&quantity=1`
+    );
+  };
+
   return (
     <div className="rounded-lg overflow-hidden w-64 p-2 m-4">
       {product.images.map((image) => (
@@ -17,7 +25,10 @@ export default function ProductCard({ product }) {
           {product.title}
           <p>{product.price}€</p>
         </h4>
-        <button className="bg-indigo-500 border-4 border-sky-500 hover:bg-indigo-400 shadow-md shadow-amber-400 hover:shadow-amber-600 p-1 rounded-md">
+        <button
+          className="bg-indigo-500 border-4 border-sky-500 hover:bg-indigo-400 shadow-md shadow-amber-400 hover:shadow-amber-600 p-1 rounded-md"
+          onClick={addProductToCart}
+        >
           Add to cart
         </button>
       </div>
