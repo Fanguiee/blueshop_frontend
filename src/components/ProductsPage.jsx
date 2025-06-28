@@ -7,10 +7,11 @@ export default function ProductsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("http://localhost:8080/api/v1/products/all")
       .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
+      .then((res) => {
+        console.log("got:", res.data);
+        setProducts(res.data);
         setLoading(false);
       })
       .catch((error) => {

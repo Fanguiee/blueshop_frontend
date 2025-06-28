@@ -54,6 +54,9 @@ export default function Cart() {
       <div className="font-medium flex items-end">
         <p>Total:{total}</p>
       </div>
+      <button className="bg-sky-500/45 hover:bg-sky-500/60 p-1 rounded-md">
+        Buy now
+      </button>
     </div>
   );
 }

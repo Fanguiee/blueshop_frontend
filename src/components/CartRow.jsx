@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function CartRow({ cartItem }) {
   return (
     <div className="w-full md:w-1/2 p-2 bg-green-50 flex">
@@ -11,7 +9,7 @@ export default function CartRow({ cartItem }) {
           <p>x{cartItem.quantity}</p>
         </div>
         <div className="flex justify-end font-medium">
-          <p>Total:{cartItem.quantity * cartItem.product.price}</p>
+          <p>{cartItem.quantity * cartItem.product.price}</p>
         </div>
       </div>
     </div>
